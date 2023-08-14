@@ -1,0 +1,630 @@
+/* Mobile First Styles */
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+/* Navigation Bar Styles */
+.fixed-nav-bar {
+  background-color: #0f172a;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav bar title */
+.title-nav {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: auto;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hide the navigation bar by default */
+.fixed-nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/* Show the navigation bar when the hamburger button is clicked */
+.fixed-nav-bar ul.show {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  top: 6%;
+  /* left: 78%; */
+  right: -6%;
+  background-color: #0f172a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+}
+
+/* Style the hamburger button (visible only on mobile) */
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* background-color: transparent; */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  /* allign the button at right of nav bar */
+  margin-left: auto;
+  z-index: 1;
+}
+
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:before {
+  top: 0;
+}
+
+.hamburger:after {
+  bottom: 0;
+}
+
+.hamburger.active:before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.hamburger.active:after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+/* Rotate the hamburger button when the navigation bar is shown */
+.fixed-nav-bar ul.show+.hamburger:before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.fixed-nav-bar ul.show+.hamburger:after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.fixed-nav-bar li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.fixed-nav-bar li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+/* Set the z-index of the list items inside the navigation menu */
+.fixed-nav-bar ul.show li {
+  z-index: 3;
+}
+
+/* Home Section Styles */
+#home {
+  padding-top: 10rem;
+  padding-bottom: 7rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #0f172a;
+  color: #fff;
+}
+
+.logoImg {
+  width: 100%;
+  max-width: 335px;
+  margin-bottom: 2rem;
+  background: url(/static/images/saraswati.png) no-repeat center;
+  background-size: contain;
+  height: 10rem;
+
+}
+
+#home h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+#home p {
+  line-height: 2rem;
+  margin-top: 2rem;
+}
+
+/* Features Section Styles */
+.featureContainer {
+  margin-top: 2rem;
+}
+
+#features {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.keyFeature {
+  margin-bottom: 4rem;
+
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#features h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.keyFeature p {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 30px;
+  max-width: 42rem;
+  color: #1E293B;
+}
+
+.featureListText {
+  background: rgba(19, 15, 42, 0.07);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.featureListText h3 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.featureListText p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #1E293B;
+}
+
+#features ul {
+  list-style: disc;
+  padding-left: 30px;
+}
+
+#features li {
+  margin-bottom: 10px;
+}
+
+/* Gallery Section Styles for mobile view*/
+
+/* Style for the gallery section */
+#gallary {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+#gallary h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gallaryBox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallary {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallaryImg {
+  flex: 0 0 100%;
+}
+
+.gallaryImg img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Frequently Asked Questions Section Styles */
+#faq {
+  max-width: 800px;
+  padding-bottom: 2rem;
+  padding-top: 5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#faq h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  /* margin-bottom: 20px; */
+  margin: 0;
+  font-weight: 700;
+  top: 1.5rem;
+  position: sticky;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#faq .question {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(19, 15, 42, 0.07);
+  /* background-color: rgb(248 250 252/var(--tw-bg-opacity)); */
+}
+
+.faqBox {
+  gap: 1.5rem;
+  max-width: 80rem;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#faq .question h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+#faq .question p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.contactBox {
+  width: 100%;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(19, 15, 42, 0.08);
+}
+
+/* Contact Section Styles */
+#contact {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  /* background-color: #f9f9f9; */
+}
+
+#contact h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0 ;
+}
+
+#contact p em {
+  font-style: italic;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  gap: 0.75rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Media Query for Laptop Screen Size */
+@media (min-width: 1024px) {
+
+  /* Increase font sizes and adjust layout for larger screens */
+  body {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .fixed-nav-bar {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .fixed-nav-bar ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .fixed-nav-bar li {
+    margin: 0 20px;
+  }
+
+  /* Hide the hamburger button on larger screens */
+  .hamburger {
+    display: none;
+  }
+
+  .hero_overlay {
+    background: url(/hero_img.jpeg) center no-repeat;
+    opacity: 20%;
+    height: 100%;
+  }
+
+  #home {
+    padding: 13.9rem;
+  }
+
+  .logoImg {
+    display: none;
+    width: 100%;
+    max-width: 335px;
+    margin-bottom: 2rem;
+    background: url(/static/images/saraswati.png) no-repeat center;
+    background-size: contain;
+    height: 10rem;
+  
+  }
+
+  #home h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-top: 0;
+    min-width: auto;
+    z-index: 3;
+  }
+
+  #home h2 {
+    font-size: 32px;
+  }
+
+  #home p {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  #features {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+
+  .featureBox {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .featureList {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    /* grid-gap: 2rem; */
+  }
+
+  .feature {
+    width: 50%;
+  }
+
+  .featureListText {
+    padding: 3rem;
+  }
+
+  .featureListText h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+  }
+
+  .featureListText p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  /* .featureBox {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 80rem;
+  } */
+
+  .featureContainer {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featureSpace {
+    width: 50%;
+  }
+
+  .order-first {
+    order: -9999;
+  }
+
+  .order-last {
+    order: 9999;
+  }
+
+  #features h2 {
+    min-width: 42rem;
+    font-size: 3.70rem;
+    margin: 0;
+  }
+
+  .keyFeature h2 {
+    font-size: 3.75rem;
+  }
+
+  .keyFeature p {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 93rem;
+    font-size: 1.5rem;
+    line-height: 1.625;
+  }
+
+  #features ul {
+    padding-left: 40px;
+  }
+
+  /* laptop view style for gallary section  */
+  #gallary h2 {
+    font-size: 3rem;
+  }
+
+  #contact {
+    padding: 100px;
+  }
+
+  #contact h2 {
+    font-size: 36px;
+  }
+
+  /* Laptop View Styles for FAQ and Beverages */
+  #faq {
+    max-width: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #faq h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    z-index: 2;
+  }
+
+  .faqBox {
+    gap: 2.5rem;
+    max-width: 80rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column: span 2/span 2;
+  }
+
+  #faq .question {
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+  }
+
+  #faq .question h3 {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #faq .question p {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .contactBox {
+    margin-top: 8rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(19, 15, 42, 0.08);
+  }
+
+  #contact {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .contactItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 56rem;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #contact h2 {
+    font-size: 3rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+  }
+}
