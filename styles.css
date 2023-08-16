@@ -139,7 +139,7 @@ body {
   width: 100%;
   max-width: 59rem;
   margin-bottom: 4rem;
-  background: url(/static/images/saraswati.png) no-repeat center;
+  background: url(static/images/saraswati.png) no-repeat center;
   background-size: contain;
   height: 23rem;
 
